@@ -1,1 +1,116 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level III: NPSOM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+            background: #111111;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 26px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffffff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 18px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        .notes {
+            margin-top: 30px;
+            padding: 20px;
+            background: #222222;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .dot {
+            width: 4px;
+            height: 4px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+        .button:hover {
+            background-color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="intro">
+        <h1>Level III: NPSOM</h1>
+        <p>As before, the final product of this challenge will lead you to victory when navigated using a Vercel URL. Within the structured text lies the key to progression. Observe carefully, extract what is necessary, and proceed accordingly.</p>
+        <button class="button" onclick="showPuzzle()">Next</button>
+    </div>
+    
+    <div class="container" id="puzzle" style="display: none;">
+        <h1>Paragraf III</h1>
+        <p>Throughout history, remarkable artists advanced sonic landscapes. Numerous pioneers sought innovative textures, layering electronic waves. Amplified frequencies thrived, echoing surreal tones. Every sound shaped unique resonance.
+        
+        Synthesizers emerged, yielding futuristic harmonies. New technology transformed compositions. Harmonic oscillations elevated melodies, shaping expressive dimensions. Intricate engineering zoned frequencies precisely. Experimentation pushed boundaries, revolutionizing sonic possibilities.
+        
+        These devices offer limitless innovation.
+        
+        Mystical harmonics open auditory realms. Resonant vibrations stitch musical fabrics. Every experiment echoes forward<span class="dot" onclick="playAudio()"></span>.</p>
+        
+        <audio id="audio" src="NPSOM.mp3"></audio>
+        
+        <div class="notes">
+            <h2>Notes Board</h2>
+            <p>In this level, 11 represents "-" and 1 represents "." Follow the rhythm carefully.</p>
+            <p>Listen to the sound.</p>
+        </div>
+        
+        <button class="button" onclick="returnToIntro()">Return</button>
+    </div>
+
+    <script>
+        function showPuzzle() {
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("puzzle").style.display = "block";
+        }
+        function returnToIntro() {
+            document.getElementById("puzzle").style.display = "none";
+            document.getElementById("intro").style.display = "block";
+        }
+        function playAudio() {
+            let audio = document.getElementById('audio');
+            audio.currentTime = 0;
+            audio.play();
+            setTimeout(() => { audio.pause(); }, 15000); // Stops after 15 seconds
+        }
+    </script>
+</body>
+</html>
+
